@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ResearchProjectTagDef>
+		<defName>NoResearchStartTag</defName>
+	</ResearchProjectTagDef>
+
+    <FactionDef ParentName="PlayerFactionBase">
+        <defName>NoResearchNeolithic</defName>
+        <label>no research (neolithic)</label>
+        <description>A faction that starts with no research, and the neolithic tech-level.</description>
+        <pawnSingular>pawn</pawnSingular>
+        <pawnsPlural>pawns</pawnsPlural>
+
+        <expandingIconTexture>World/WorldObjects/Expanding/Village</expandingIconTexture>
+        <homeIconPath>World/WorldObjects/TribalSettlement</homeIconPath>
+
+        <isPlayer>true</isPlayer>
+        <basicMemberKind>Colonist</basicMemberKind>
+        <techLevel>Neolithic</techLevel>
+        <backstoryCategories>
+            <li>Tribal</li>
+            <li>Raider</li>
+            <li>Slave</li>
+            <li>Traveller</li>
+        </backstoryCategories>
+        <pawnNameMaker>NamerPersonTribal</pawnNameMaker>
+        <playerInitialSettlementNameMaker>NamerInitialSettlementTribe</playerInitialSettlementNameMaker>
+        <factionNameMaker>NamerFactionTribal</factionNameMaker>
+        <settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
+        <geneticVariance>1.0</geneticVariance>
+        <forageabilityFactor>1.7</forageabilityFactor>
+        <startingResearchTags>
+            <li>NoResearchStartTag</li>
+        </startingResearchTags>
+        <hairTags>
+            <li>Tribal</li>
+            <li>Punk</li>
+			<li>Rural</li>
+        </hairTags>
+        <apparelStuffFilter>
+            <thingDefs>
+                <li>Cloth</li>
+            </thingDefs>
+        </apparelStuffFilter>
+    </FactionDef>
+
+    <FactionDef ParentName="PlayerFactionBase">
+        <defName>NoResearchIndustrial</defName>
+        <label>no research (industrial)</label>
+        <description>A faction that starts with no research, and the industrial tech-level.</description>
+        <pawnSingular>pawn</pawnSingular>
+        <pawnsPlural>pawns</pawnsPlural>
+
+        <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+        <homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
+
+        <isPlayer>true</isPlayer>
+        <basicMemberKind>Colonist</basicMemberKind>
+        <techLevel>Industrial</techLevel>
+        <backstoryCategories>
+            <li>Civil</li>
+            <li>Raider</li>
+            <li>Slave</li>
+            <li>Traveller</li>
+        </backstoryCategories>
+        <!--<pawnNameMaker>NamerPersonTribal</pawnNameMaker>-->
+        <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+        <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+        <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+        <geneticVariance>1.0</geneticVariance>
+        <forageabilityFactor>1.0</forageabilityFactor>
+        <startingResearchTags>
+            <li>NoResearchStartTag</li>
+        </startingResearchTags>
+        <hairTags>
+            <li>Urban</li>
+            <li>Punk</li>
+			<li>Rural</li>
+        </hairTags>
+        <apparelStuffFilter>
+            <thingDefs>
+                <li>Cloth</li>
+            </thingDefs>
+        </apparelStuffFilter>
+    </FactionDef>
+</Defs>
