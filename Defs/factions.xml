@@ -4,18 +4,56 @@
 		<defName>NoResearchStartTag</defName>
 	</ResearchProjectTagDef>
 
-    <FactionDef ParentName="PlayerFactionBase">
-        <defName>NoResearchNeolithic</defName>
-        <label>no research (neolithic)</label>
-        <description>A faction that starts with no research, and the neolithic tech-level.</description>
+    <FactionDef Name="NoResearchFactionBase" ParentName="PlayerFactionBase" Abstract="True">
+        <description>A faction that starts with no research.</description>
         <pawnSingular>pawn</pawnSingular>
         <pawnsPlural>pawns</pawnsPlural>
+
+        <isPlayer>true</isPlayer>
+        <basicMemberKind>Colonist</basicMemberKind>
+        <geneticVariance>1.0</geneticVariance>
+        <startingResearchTags>
+            <li>NoResearchStartTag</li>
+        </startingResearchTags>
+    </FactionDef>
+
+
+    <FactionDef ParentName="NoResearchFactionBase">
+        <defName>NoResearchAnimal</defName>
+        <label>no research (animal)</label>
+
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Manhunters</expandingIconTexture>
+        <homeIconPath>World/WorldObjects/TribalSettlement</homeIconPath>
+
+        <techLevel>Animal</techLevel>
+        <backstoryCategories>
+            <li>Tribal</li>
+            <li>Raider</li>
+            <li>Slave</li>
+            <li>Traveller</li>
+        </backstoryCategories>
+        <pawnNameMaker>NamerPersonTribal</pawnNameMaker>
+        <playerInitialSettlementNameMaker>NamerInitialSettlementTribe</playerInitialSettlementNameMaker>
+        <factionNameMaker>NamerFactionTribal</factionNameMaker>
+        <settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
+        <forageabilityFactor>2.5</forageabilityFactor>
+        <hairTags>
+            <li>Tribal</li>
+        </hairTags>
+        <apparelStuffFilter>
+            <thingDefs>
+                <li>Leather_Plain</li>
+            </thingDefs>
+        </apparelStuffFilter>
+    </FactionDef>
+
+    <FactionDef ParentName="NoResearchFactionBase">
+        <defName>NoResearchNeolithic</defName>
+        <label>no research (neolithic)</label>
 
         <expandingIconTexture>World/WorldObjects/Expanding/Village</expandingIconTexture>
         <homeIconPath>World/WorldObjects/TribalSettlement</homeIconPath>
 
-        <isPlayer>true</isPlayer>
-        <basicMemberKind>Colonist</basicMemberKind>
         <techLevel>Neolithic</techLevel>
         <backstoryCategories>
             <li>Tribal</li>
@@ -27,15 +65,68 @@
         <playerInitialSettlementNameMaker>NamerInitialSettlementTribe</playerInitialSettlementNameMaker>
         <factionNameMaker>NamerFactionTribal</factionNameMaker>
         <settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
-        <geneticVariance>1.0</geneticVariance>
         <forageabilityFactor>1.7</forageabilityFactor>
-        <startingResearchTags>
-            <li>NoResearchStartTag</li>
-        </startingResearchTags>
         <hairTags>
             <li>Tribal</li>
-            <li>Punk</li>
+        </hairTags>
+        <apparelStuffFilter>
+            <thingDefs>
+                <li>Leather_Plain</li>
+                <li>Cloth</li>
+            </thingDefs>
+        </apparelStuffFilter>
+    </FactionDef>
+
+
+    <FactionDef Name="NoResearchFactionMedievalAndHigherBase" ParentName="NoResearchFactionBase" Abstract="True">
+        <homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
+
+        <backstoryCategories>
+            <li>Civil</li>
+            <li>Raider</li>
+            <li>Slave</li>
+            <li>Traveller</li>
+        </backstoryCategories>
+        <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+        <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+        <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    </FactionDef>
+
+    <FactionDef ParentName="NoResearchFactionMedievalAndHigherBase">
+        <defName>NoResearchMedieval</defName>
+        <label>no research (medieval)</label>
+
+        <expandingIconTexture>World/WorldObjects/Expanding/Village</expandingIconTexture>
+
+        <techLevel>Medieval</techLevel>
+        <forageabilityFactor>1.3</forageabilityFactor>
+        <hairTags>
 			<li>Rural</li>
+        </hairTags>
+        <apparelStuffFilter>
+            <thingDefs>
+                <li>Leather_Plain</li>
+                <li>Cloth</li>
+                <li>Steel</li>
+            </thingDefs>
+        </apparelStuffFilter>
+    </FactionDef>
+
+
+    <FactionDef Name="NoResearchFactionIndustrialAndHigherBase" ParentName="NoResearchFactionMedievalAndHigherBase" Abstract="True">
+        <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+        <forageabilityFactor>1.0</forageabilityFactor>
+    </FactionDef>
+
+    <FactionDef ParentName="NoResearchFactionIndustrialAndHigherBase">
+        <defName>NoResearchIndustrial</defName>
+        <label>no research (industrial)</label>
+
+        <techLevel>Industrial</techLevel>
+        <hairTags>
+            <li>Rural</li>
+            <li>Urban</li>
+            <li>Punk</li>
         </hairTags>
         <apparelStuffFilter>
             <thingDefs>
@@ -44,42 +135,57 @@
         </apparelStuffFilter>
     </FactionDef>
 
-    <FactionDef ParentName="PlayerFactionBase">
-        <defName>NoResearchIndustrial</defName>
-        <label>no research (industrial)</label>
-        <description>A faction that starts with no research, and the industrial tech-level.</description>
-        <pawnSingular>pawn</pawnSingular>
-        <pawnsPlural>pawns</pawnsPlural>
 
-        <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
-        <homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
-
-        <isPlayer>true</isPlayer>
-        <basicMemberKind>Colonist</basicMemberKind>
-        <techLevel>Industrial</techLevel>
-        <backstoryCategories>
-            <li>Civil</li>
-            <li>Raider</li>
-            <li>Slave</li>
-            <li>Traveller</li>
-        </backstoryCategories>
-        <!--<pawnNameMaker>NamerPersonTribal</pawnNameMaker>-->
-        <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
-        <factionNameMaker>NamerFactionOutlander</factionNameMaker>
-        <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
-        <geneticVariance>1.0</geneticVariance>
-        <forageabilityFactor>1.0</forageabilityFactor>
-        <startingResearchTags>
-            <li>NoResearchStartTag</li>
-        </startingResearchTags>
+    <FactionDef Name="NoResearchFactionSpacerAndHigherBase" ParentName="NoResearchFactionIndustrialAndHigherBase" Abstract="True">
         <hairTags>
+            <li>Tribal</li>
+            <li>Rural</li>
             <li>Urban</li>
             <li>Punk</li>
-			<li>Rural</li>
         </hairTags>
+    </FactionDef>
+
+    <FactionDef ParentName="NoResearchFactionSpacerAndHigherBase">
+        <defName>NoResearchSpacer</defName>
+        <label>no research (spacer)</label>
+
+        <techLevel>Spacer</techLevel>
         <apparelStuffFilter>
             <thingDefs>
                 <li>Cloth</li>
+                <li>Synthread</li>
+            </thingDefs>
+        </apparelStuffFilter>
+    </FactionDef>
+
+    <FactionDef ParentName="NoResearchFactionSpacerAndHigherBase">
+        <defName>NoResearchUltra</defName>
+        <label>no research (ultratech)</label>
+
+        <techLevel>Ultra</techLevel>
+        <apparelStuffFilter>
+            <thingDefs>
+                <li>Leather_Plain</li>
+                <li>Cloth</li>
+                <li>Synthread</li>
+                <li>Hyperweave</li>
+				<li>Plasteel</li>
+            </thingDefs>
+        </apparelStuffFilter>
+    </FactionDef>
+
+    <FactionDef ParentName="NoResearchFactionSpacerAndHigherBase">
+        <defName>NoResearchArchotech</defName>
+        <label>no research (archotech)</label>
+
+        <techLevel>Archotech</techLevel>
+        <apparelStuffFilter>
+            <thingDefs>
+                <li>Leather_Plain</li>
+                <li>Cloth</li>
+                <li>Synthread</li>
+                <li>Hyperweave</li>
+				<li>Plasteel</li>
             </thingDefs>
         </apparelStuffFilter>
     </FactionDef>
