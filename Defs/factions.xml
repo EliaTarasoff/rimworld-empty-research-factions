@@ -79,6 +79,7 @@
 
 
     <FactionDef Name="NoResearchFactionMedievalAndHigherBase" ParentName="NoResearchFactionBase" Abstract="True">
+        <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
         <homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
 
         <backstoryCategories>
@@ -96,8 +97,6 @@
         <defName>NoResearchMedieval</defName>
         <label>no research (medieval)</label>
 
-        <expandingIconTexture>World/WorldObjects/Expanding/Village</expandingIconTexture>
-
         <techLevel>Medieval</techLevel>
         <forageabilityFactor>1.3</forageabilityFactor>
         <hairTags>
@@ -114,7 +113,6 @@
 
 
     <FactionDef Name="NoResearchFactionIndustrialAndHigherBase" ParentName="NoResearchFactionMedievalAndHigherBase" Abstract="True">
-        <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
         <forageabilityFactor>1.0</forageabilityFactor>
     </FactionDef>
 
